@@ -12,7 +12,7 @@ import { TaskDetailsComponent } from "../task-details/task-details.component";
 })
 export class TaskListComponent /*implements OnInit*/{
 
-  tasks: Task[] = [{id:1, name:"first"}, {id:2, name:"second"}, {id:3, name:"third"}];
+  tasks: Task[] = [{id:1, name:"first", description:"nice:)"}, {id:2, name:"second"}, {id:3, name:"third"}];
 
   deleteTask(task: Task)
   {
@@ -26,6 +26,25 @@ export class TaskListComponent /*implements OnInit*/{
   {
     this.selectorTask= taskToShow; 
   }
+
+  showNewTaskDetails()
+  {
+    this.selectorTask = { id: 0, name: " " };
+  }
+
+  addNewtaskToList(taskToAdd: Task)
+ {
+  if (taskToAdd) {
+    this.tasks.push(taskToAdd);
+    this.selectorTask= null;
+  }
+
+ }
+
+ showHelp()
+ {
+  alert("Do you need help?")
+ }
 
   constructor(){}
   //ngOnInit(): void{}

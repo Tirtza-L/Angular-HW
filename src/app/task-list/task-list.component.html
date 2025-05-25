@@ -10,4 +10,9 @@
 </ul>
 
 <br/>
-<task-details [task]="selectorTask"></task-details>
+
+<button class="btn btn-primary" (click)="showNewTaskDetails()">Add new task</button>
+
+<br/>
+
+<task-details [task]="selectorTask" (onSaveNewTask)="addNewtaskToList($event)" (onFirstFocus)="showHelp()"></task-details>
