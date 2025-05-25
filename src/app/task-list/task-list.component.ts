@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from '../task.model';
 import { CommonModule } from '@angular/common';
+import { TaskDetailsComponent } from "../task-details/task-details.component";
 
 @Component({
   selector: 'task-list',
-  imports: [CommonModule], // Add CommonModule here
+  standalone: true,
+  imports: [CommonModule, TaskDetailsComponent], // Add CommonModule here
   // imports: [],
   templateUrl: './task-list.component.html',
 })
@@ -16,6 +18,13 @@ export class TaskListComponent /*implements OnInit*/{
   {
      let indexOfDelete = this.tasks.indexOf(task);
      this.tasks.splice(indexOfDelete,1);
+  }
+
+  selectorTask: Task  | null = null;;
+
+  showDetails(taskToShow: Task)
+  {
+    this.selectorTask= taskToShow; 
   }
 
   constructor(){}

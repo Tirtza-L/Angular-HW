@@ -3,7 +3,11 @@
         <div class="row">
             <div class="col-1">{{task.id}}</div>
             <div class="col-3">{{task.name}}</div>
+            <div class="col-2" (click)="showDetails(task)"> <button>Show Details</button></div>
             <div class="col-2" (click)="deleteTask(task)"> <button>Delete Task</button></div>
         </div>
     </li>
 </ul>
+
+<br/>
+<task-details [task]="selectorTask"></task-details>
