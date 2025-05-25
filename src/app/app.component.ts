@@ -7,7 +7,7 @@ import { TaskListComponent } from './task-list/task-list.component'
   // template: "<h1>{{title}}</h1>",
   templateUrl: "app.component.html",
   selector: "app-root",
-  standalone: true, // If using standalone components
+  //standalone: true, // If using standalone components
   imports: [TaskListComponent] // Add TaskListComponent here if it's standalone
 })
 

@@ -12,6 +12,12 @@ export class TaskListComponent /*implements OnInit*/{
 
   tasks: Task[] = [{id:1, name:"first"}, {id:2, name:"second"}, {id:3, name:"third"}];
 
+  deleteTask(task: Task)
+  {
+     let indexOfDelete = this.tasks.indexOf(task);
+     this.tasks.splice(indexOfDelete,1);
+  }
+
   constructor(){}
   //ngOnInit(): void{}
 }
